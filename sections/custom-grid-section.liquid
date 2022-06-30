@@ -1,27 +1,37 @@
 <section class="image-grid">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-60">
-                <div class="grid-title-container">
-                    <h2>{{section.settings.title}}</h2>
-                    <p>{{section.settings.text}}</p>
-                </div>
+        <div class="col-60">
+            <div class="grid-title-container">
+                {% if section.settings.title != blank %}
+                <h2>{{section.settings.title}}</h2>
+                {% endif %}
+                {% if section.settings.text != blank %}
+                <p>{{section.settings.text}}</p>
+                {% endif %}
             </div>
+        </div>
+        <div class="row align-items-center">
             <div class="col-md-30 col-60">
                 <div class="single-img">
+                    {% if section.settings.image_1 != blank %}
                     <a href="{{section.settings.image_1_link}}">
                         <img class="w-100" src="{{ section.settings.image_1 | img_url: '1000x' }}" alt="{{section.settings.image_1.alt}}">
                     </a>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-md-30 col-60">
                 <div class="double-img">
+                    {% if section.settings.image_2 != blank %}
                     <a href="{{section.settings.image_2_link}}">
                         <img class="w-100" src="{{ section.settings.image_2 | img_url: '800x' }}" alt="{{section.settings.image_2.alt}}">
                     </a>
+                    {% endif %}
+                    {% if section.settings.image_3 != blank %}
                     <a href="{{section.settings.image_3_link}}">
                         <img class="w-100" src="{{ section.settings.image_3 | img_url: '800x' }}" alt="{{section.settings.image_3.alt}}">
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -36,6 +46,41 @@
             "type": "text",
             "id": "title",
             "label": "Title"
+        },  
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "url",
+            "id": "image_1_link",
+            "label": "Add Image-1 Url"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Add Image 1"
+        },
+        {
+            "type": "url",
+            "id": "image_2_link",
+            "label": "Add Image-2 Url"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Add Image 2"
+        },
+        {
+            "type": "url",
+            "id": "image_3_link",
+            "label": "Add Image-3 Url"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "Add Image 3"
         }
     ],
         "presets": [

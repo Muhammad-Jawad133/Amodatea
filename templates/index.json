@@ -27,7 +27,14 @@
     "1656544145a5b5bd31": {
       "type": "custom-grid-section",
       "settings": {
-        "title": ""
+        "title": "DRINKABLE WELLNESS IN EVERY SIP",
+        "text": "Delicious, nourishing & organic matcha, adaptogen lattes, and teas.",
+        "image_1_link": "#",
+        "image_1": "shopify:\/\/shop_images\/feature1.png",
+        "image_2_link": "#",
+        "image_2": "shopify:\/\/shop_images\/feature2.png",
+        "image_3_link": "#",
+        "image_3": "shopify:\/\/shop_images\/feature3.png"
       }
     },
     "collage": {
