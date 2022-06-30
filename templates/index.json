@@ -37,116 +37,103 @@
         "image_3": "shopify:\/\/shop_images\/feature3.png"
       }
     },
-    "collage": {
-      "type": "collage",
+    "16566080362b3b25fd": {
+      "type": "home-benefits",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "faa4c152-8814-485f-b48d-f08e487ad650": {
+          "type": "main_banner_Section",
           "settings": {
-            "collection": ""
+            "icon_point": "<i class=\"fa fa-feature fa-leaf\" aria-hidden=\"true\"><\/i>",
+            "title": "Pure & simple",
+            "text": "Organic ingredients. No fillers. No sugar. No artificial flavouring."
           }
         },
-        "product": {
-          "type": "product",
+        "9c768315-18cf-49dd-a04b-043e518180f2": {
+          "type": "main_banner_Section",
           "settings": {
-            "product": "",
-            "second_image": false
+            "icon_point": "<i class=\"fa fa-feature fa-star-o\" aria-hidden=\"true\"><\/i>",
+            "title": "Real Amounts",
+            "text": "Ingredient amounts you can actually feel working for you."
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "c6a6dd27-ee92-4362-be02-5928ef5253b4": {
+          "type": "main_banner_Section",
           "settings": {
-            "collection": ""
+            "icon_point": "<i class=\"fa fa-feature fa-globe\" aria-hidden=\"true\"><\/i>",
+            "title": "Mindful Sourcing",
+            "text": "Carefully and ethically sourced teas and herbs."
+          }
+        },
+        "ed3178bf-1733-474b-a2a5-056758037b70": {
+          "type": "main_banner_Section",
+          "settings": {
+            "icon_point": "<i class=\"fa fa-feature fa-heartbeat\" aria-hidden=\"true\"><\/i>",
+            "title": "Research-backed",
+            "text": "We use ingredients with studies to back to them up."
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "faa4c152-8814-485f-b48d-f08e487ad650",
+        "9c768315-18cf-49dd-a04b-043e518180f2",
+        "c6a6dd27-ee92-4362-be02-5928ef5253b4",
+        "ed3178bf-1733-474b-a2a5-056758037b70"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "section_bg_color": "#ded1bd"
       }
     },
-    "video": {
-      "type": "video",
+    "1656611181cd56af2e": {
+      "type": "custom-featured-collections",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "JAPANESE GREEN TEAS",
+        "text": "<p>A collection of our direct-source, authentic and organic Japanese green teas. Choose from our two pure matcha green teas from Uji, Japan, our hojicha roasted green tea powder and loose leaf tea, sencha and genmaicha (green tea with roasted rice).<\/p>",
+        "collection": "custom-collection",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "165661726096cd593c": {
+      "type": "customer-reviews-section",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "1b7d4da2-a0f2-4225-9336-a5148e5ec652": {
+          "type": "review",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Amoda is my first stop for stocking up on my favourite teas and finding new ones. I like how the selection is curated, so the best teas are highlighted from many different quality brands.<br\/><br\/> JACQUI<\/p>"
           }
         },
-        "column2": {
-          "type": "column",
+        "b5f9f380-e10b-4234-b189-41030c4af52a": {
+          "type": "review",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>I love the organic ceremonial matcha and all of Amoda products. The research and time they put into creating their products is inspiring. Do yourself a favour and get some!<\/p><p>- KAINE<\/p>"
           }
         },
-        "column3": {
-          "type": "column",
+        "948d649d-fbe7-4c8f-98aa-db69f70a0c58": {
+          "type": "review",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>I absolutely love the Amoda Tea box - the variety is really what I was looking for in a monthly tea subscription. I've already recommended it to at least one friend who is now a subscriber.<\/p><p>- ALEXA<\/p>"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "1b7d4da2-a0f2-4225-9336-a5148e5ec652",
+        "b5f9f380-e10b-4234-b189-41030c4af52a",
+        "948d649d-fbe7-4c8f-98aa-db69f70a0c58"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "bg_color": "#ded1bd",
+        "title": "Review"
       }
     }
   },
   "order": [
     "1656536825e16c06f8",
     "1656544145a5b5bd31",
-    "collage",
-    "video",
-    "multicolumn"
+    "16566080362b3b25fd",
+    "1656611181cd56af2e",
+    "165661726096cd593c"
   ]
 }

@@ -1,0 +1,67 @@
+{{ 'customer-review.css' | asset_url | stylesheet_tag }}
+<section class="customer-review" style="background-color: {{section.settings.bg_color}};">
+    <div class="container">
+        <div class="row">
+            <div class="col-60">
+                {% if section.settings.title != blank %}
+                <div class="review-section-title text-center">
+                    <h2 class="text-white">{{ section.settings.title }}</h2>
+                </div>
+                {% endif %}
+                <div class="review-title-stars text-center">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+            </div>
+            {% for block in section.blocks limit: 3 %}
+            <div class="col-md-20 col-60">
+                <div class="review-text-content text-center">
+                    {{block.settings.text}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "Review Section",
+    "class": "review-section",
+    "settings": [
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#ded1bd"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Review"
+        }
+    ],
+    "blocks": [
+    {
+    "type": "review",
+    "name": "Review Content",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Add Review Text"
+        }
+      ]
+   }
+],
+"presets": [
+        {
+            "name": "Review Section",
+            "category": "Review"
+        }
+    ]
+}
+{% endschema %}

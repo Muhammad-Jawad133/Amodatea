@@ -443,8 +443,18 @@ a.product__text {
   margin: 0 auto 1.2rem auto;
 }
 
-.product-form__buttons {
+/* .product-form__buttons {
   max-width: 44rem;
+} */
+.custom_btn_submit {
+  background: #ce7d5d;
+  -webkit-transition: all 200ms ease 0s;
+  -moz-transition: all 200ms ease 0s;
+  -ms-transition: all 200ms ease 0s;
+  -o-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  border: none;
+  text-transform: uppercase;
 }
 
 .product--no-media .product__info-container > modal-opener {

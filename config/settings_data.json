@@ -13,7 +13,7 @@
     "gradient_background_2": "",
     "type_header_font": "montserrat_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "montserrat_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -83,10 +83,10 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
-    "social_twitter_link": "",
-    "social_facebook_link": "",
-    "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_twitter_link": "#",
+    "social_facebook_link": "#",
+    "social_pinterest_link": "#",
+    "social_instagram_link": "#",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -95,6 +95,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
+    "favicon": "shopify:\/\/shop_images\/logo.png",
     "currency_code_enabled": true,
     "cart_type": "notification",
     "show_vendor": false,
@@ -105,6 +106,7 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Welcome to our store",
               "color_scheme": "background-1",
@@ -123,7 +125,7 @@
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_width": 90,
+          "logo_width": 150,
           "logo_position": "middle-left",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
@@ -140,12 +142,13 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
+              "heading": "FOOTER",
               "menu": "footer"
             }
           },
           "footer-1": {
             "type": "link_list",
+            "disabled": true,
             "settings": {
               "heading": "Info",
               "menu": "footer"
@@ -154,8 +157,8 @@
           "footer-2": {
             "type": "text",
             "settings": {
-              "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "heading": "WHY AMODA?",
+              "subtext": "<p>Intentional blends, ethically-sourced ingredients, and quality you can trust. No fillers, artificial flavourings or sweeteners. Just pure plant power.<br\/><br\/>1-855-980-7350<\/p>"
             }
           }
         },
@@ -166,7 +169,7 @@
         ],
         "settings": {
           "color_scheme": "background-1",
-          "newsletter_enable": true,
+          "newsletter_enable": false,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
           "enable_country_selector": false,

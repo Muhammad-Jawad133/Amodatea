@@ -1,0 +1,122 @@
+<style>
+    .featured-section-title h2 {
+    font-size: 38px;
+    padding-top: 4px;
+}
+.home-popular-product .media{
+    position: unset;
+}
+.custom-product-card{
+    transition: all 0.25s;
+}
+.custom-product-card:hover{
+    opacity: 0.8;
+}
+.custom-product-card .card__information{
+    text-align: center;
+    margin-top: 0.75em;
+}
+.custom-product-card .full-unstyled-link{
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+}
+</style>
+{% assign collection = collections[section.settings.collection] %}
+{% if collection %}
+{% capture collection_products %}
+{{collection_products}}
+  {% for product in collection.products limit: 7 %}
+    <div class="col-30 col-md-20 custom-product-card">
+        <a href="{{product.url}}">
+        {% render 'card-product',
+            card_product: product,
+            show_vendor: section.settings.show_vendor,
+            show_quick_add: section.settings.enable_quick_add
+        %}
+        </a>
+    </div>
+    {% endfor %}
+{% endcapture %}
+<section class="custom-featured-collection">
+    <div class="page-width home-popular-product">
+    {% if section.settings.title != blank %}
+    <div class="featured-section-title text-center">
+      <h2>{{ section.settings.title }}</h2>
+      {{ section.settings.text }}
+    </div>
+    {% endif %}
+    <div class="pt-1-875">
+      <div class="w-100 row items-center mx-auto">
+          {{collection_products}}
+      </div>
+    </div>
+    </div>
+  </section>
+  {% endif %}
+{% schema %}
+{
+    "name": "Custom Featured Colletion",
+    "class": "custom-features-section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "EXPLORE NEW ARRIVALS"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.featured-collection.settings.header.content"
+          },
+          {
+            "type": "select",
+            "id": "image_ratio",
+            "options": [
+              {
+                "value": "adapt",
+                "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
+              },
+              {
+                "value": "portrait",
+                "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
+              },
+              {
+                "value": "square",
+                "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+              }
+            ],
+            "default": "adapt",
+            "label": "t:sections.featured-collection.settings.image_ratio.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_vendor",
+            "default": false,
+            "label": "t:sections.featured-collection.settings.show_vendor.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_quick_add",
+            "default": false,
+            "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
+          }
+    ],
+"presets": [
+        {
+            "name": "Custom Featured Colletion",
+            "category": "Collection"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,69 @@
+{{ 'home-benefits.css' | asset_url | stylesheet_tag }}
+<section class="home-benefits" style="background-color: {{section.settings.section_bg_color}};">
+    <div class="page-width">
+        <div class="row">
+            {% for block in section.blocks %}
+            <div class="col-md-15 col-30">
+                <div class="benefits-points text-center">
+                    {% if block.settings.icon_point != blank %}
+                    {{ block.settings.icon_point }}
+                    {% endif %}
+                    {% if block.settings.title != blank %}
+                    <h3 class="text-white benefit-title">
+                        {{ block.settings.title }}
+                    </h3>
+                    {% endif %}
+                    {% if block.settings.text != blank %}
+                    <p class="benefit-text text-white">
+                        {{ block.settings.text }}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+    {
+        "name": "Home Benefits",
+        "class": "text-section",
+        "settings": [
+        {
+            "type": "color",
+            "id": "section_bg_color",
+            "label": "Background Color",
+            "default": "#ded1bd"
+        }
+    ],
+    "blocks": [
+    {
+    "type": "main_banner_Section",
+    "name": "Banner_Data",
+    "settings": [
+        {
+            "type": "html",
+            "id": "icon_point",
+            "label": "Add Icon"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+        }
+      ]
+   }
+],
+        "presets": [
+        {
+            "name": "Home Benefits",
+            "category": "Text"
+        }
+    ] 
+}
+{% endschema %}

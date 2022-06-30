@@ -1,16 +1,17 @@
+{{ 'custom-grid.css' | asset_url | stylesheet_tag }}
 <section class="image-grid">
-    <div class="container">
-        <div class="col-60">
-            <div class="grid-title-container">
+    <div class="page-width">
+        <div class="col-60 mt-3 mb-3">
+            <div class="grid-title-container text-center">
                 {% if section.settings.title != blank %}
-                <h2>{{section.settings.title}}</h2>
+                <h2 class="title">{{section.settings.title}}</h2>
                 {% endif %}
                 {% if section.settings.text != blank %}
                 <p>{{section.settings.text}}</p>
                 {% endif %}
             </div>
         </div>
-        <div class="row align-items-center">
+        <div class="row r-gap-7">
             <div class="col-md-30 col-60">
                 <div class="single-img">
                     {% if section.settings.image_1 != blank %}

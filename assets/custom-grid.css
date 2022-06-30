@@ -1,0 +1,33 @@
+.single-img {
+    height: 100%;
+}
+.single-img a {
+    height: 100%;
+    display: flex;
+}
+.double-img a {
+    display: flex;
+}
+.double-img {
+    row-gap: 7px;
+    display: flex;
+    flex-direction: column;
+}
+.double-img img {
+    max-height: 230px;
+    object-fit: cover;
+}
+.single-img, .double-img img {
+    transition: all 0.25s;
+}
+.single-img:hover {
+    opacity: 0.8;
+}
+.double-img img:hover {
+    opacity: 0.8;
+}
+@media screen and (max-width: 767px) {
+    .r-gap-7{
+        row-gap: 7px;
+    }
+}

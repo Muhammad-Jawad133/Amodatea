@@ -1346,8 +1346,8 @@ button.shopify-payment-button__button--unbranded {
   left: var(--buttons-border-width);
   z-index: 1;
   border-radius: var(--buttons-radius);
-  box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)),
-    0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
+  /* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)),
+    0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background)); */
   transition: box-shadow var(--duration-short) ease;
 }
 
@@ -1355,9 +1355,9 @@ button.shopify-payment-button__button--unbranded {
 .shopify-challenge__button:hover::after,
 .customer button:hover::after,
 .shopify-payment-button__button--unbranded:hover::after {
-  --border-offset: 1.3px;
-  box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)),
-    0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background));
+  /* --border-offset: 1.3px; */
+  /* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), */
+    /* 0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background)); */
 }
 
 .button--secondary:after {
@@ -2241,9 +2241,15 @@ input[type='checkbox'] {
     grid-template-columns: 1fr auto;
   }
 
-  .header--middle-left {
+  /* .header--middle-left {
     grid-template-areas: 'heading navigation icons';
     grid-template-columns: auto auto 1fr;
+    column-gap: 2rem;
+  } */
+
+  .header--middle-left {
+    grid-template-areas: 'heading navigation icons';
+    grid-template-columns: auto 1fr auto;
     column-gap: 2rem;
   }
 
@@ -2582,10 +2588,13 @@ details[open] > .header__submenu {
   }
 
   .header--middle-left .header__inline-menu {
-    margin-left: 0;
+    margin-left: auto;
   }
 }
-
+.header_bar{
+  background-color: #faf6f2;
+    opacity: 0.95;
+}
 .header__menu {
   padding: 0 1rem;
 }
