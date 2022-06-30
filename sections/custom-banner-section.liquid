@@ -1,0 +1,227 @@
+{{ 'custom-banner.css' | asset_url | stylesheet_tag }}
+<section class="custom-banner">
+    <div class="banner-img-container w-100">
+        <div class="main-banner-slide">
+            {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+            {% assign dektop_image = block.settings.image %}
+            {% endif %}
+            {% if block.settings.image_mobile != blank %}
+            {% assign mobile_image = block.settings.image_mobile %}
+            {% else %}
+            {% assign mobile_image = block.settings.image %}
+            {% endif %}
+            {% if block.settings.text_color %}
+            {% assign text_color__var = block.settings.text_color %}
+            {% else %}
+            {% assign text_color__var = '#fff' %}
+            {% endif %}
+            {% if block.settings.color %}
+            {% assign btn_color = block.settings.color %}
+            {% else %}
+            {% assign btn_color = '#fff' %}
+            {% endif %}
+            {% if block.settings.btn_bg %}
+            {% assign button_back_color = block.settings.btn_bg %}
+            {% else %}
+            {% assign button_back_color = '#0f3460' %}
+            {% endif %}
+                <div class="banner-slide-content">
+                    <style>
+                        .text__-{{block.id}} h2 {
+                            color: {{text_color__var}};
+                        }
+                        .text__-{{block.id}} h6 {
+                            color: {{text_color__var}};
+                        }
+                        .text__-{{block.id}} a{
+                            color: {{btn_color}};
+                            background-color: {{button_back_color}};
+                        }
+                        .text__-{{block.id}} a:hover{
+                            opacity: 1;
+                        }
+                        @media screen and (max-width:767px) {
+                            .text__-{{block.id}} h2 {
+                                font-size: 24px;
+                                font-weight: 700;
+                            }
+                            .text__-{{block.id}} h6 {
+                                font-weight: 500;
+                                font-size: 18px;
+                            }
+                            .text__-{{block.id}} button {
+                                padding-top: 8px;
+                                padding-bottom: 8px;
+                                padding-left: 12px;
+                                padding-right: 12px;
+                                font-size: 10px;
+                            }
+                        }
+                    </style>
+                    <div class="banner-slide-img-cont">
+                            {% if dektop_image != blank %}
+                            <div class="desktop-banner d-none d-md-block w-100" href="{{ block.settings.desktop_url }}" style="background-image:url({{ dektop_image | img_url: '1600x' }});">
+                                <div class="banner-slide-text-box">
+                                    <div class="banner-slide-inner-text text__-{{block.id}}">
+                                        {% if block.settings.title != blank %}
+                                        <h2>{{ block.settings.title }}</h2>
+                                        {% endif %}
+                                        {% if block.settings.text != blank %}
+                                        <h6>{{ block.settings.text }}</h6>
+                                        {% endif %}
+                                        {% if block.settings.desktop_url != blank and block.settings.bt_text != blank %}
+                                        <div class="banner-slide-text-link-box">
+                                        <a href="{{block.settings.bt_link}}">
+                                            {{block.settings.bt_text}}
+                                        </a>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if mobile_image != blank %}
+                            <div class="mobile-banner d-block d-md-none w-100" style="background-image:url({{ mobile_image | img_url: '800x' }});">
+                                <div class="banner-slide-text-box">
+                                    <div class="banner-slide-inner-text text__-{{block.id}}">
+                                        {% if block.settings.title != blank %}
+                                        <h2>{{ block.settings.title }}</h2>
+                                        {% endif %}
+                                        {% if block.settings.text != blank %}
+                                        <h6>{{ block.settings.text }}</h6>
+                                        {% endif %}
+                                        {% if block.settings.desktop_url != blank and block.settings.bt_text != blank %}
+                                        <div class="banner-slide-text-link-box">
+                                        <button>
+                                            {{block.settings.bt_text}}
+                                        </button>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+    $('.main-banner-slide').slick({
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        fade: true,
+        cssEase: 'ease-in-out',
+        touchThreshold: 100,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<span class="banner-prev-arrow"><i class="icon-arrow-left"></i></span>',
+        nextArrow: '<span class="banner-next-arrow"><i class="icon-arrow-right"></i></span>',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+</script>
+{% schema %}
+    {
+        "name": "Main Banner Section",
+        "class": "text-section",
+        "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ],
+    "blocks": [
+        {
+        "type": "main_banner_Section",
+        "name": "Banner_Data",
+        "settings": [
+        {
+            "type": "url",
+            "id": "desktop_url",
+            "label": "Image Url"
+        },  
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Desktop Image"
+        }, 
+        {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Mobile Image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },  
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+        },   
+        {
+            "type": "text",
+            "id": "bt_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#242424"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Text Color"
+        },
+        {
+            "type": "color",
+            "id": "btn_bg",
+            "label": "Button Background"
+        }
+      ]
+    }
+],
+        "presets": [
+        {
+            "name": "Main Banner Section",
+            "category": "Image"
+        }
+    ] 
+}
+{% endschema %}

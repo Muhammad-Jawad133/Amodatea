@@ -1,0 +1,48 @@
+<section class="image-grid">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-60">
+                <div class="grid-title-container">
+                    <h2>{{section.settings.title}}</h2>
+                    <p>{{section.settings.text}}</p>
+                </div>
+            </div>
+            <div class="col-md-30 col-60">
+                <div class="single-img">
+                    <a href="{{section.settings.image_1_link}}">
+                        <img class="w-100" src="{{ section.settings.image_1 | img_url: '1000x' }}" alt="{{section.settings.image_1.alt}}">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-30 col-60">
+                <div class="double-img">
+                    <a href="{{section.settings.image_2_link}}">
+                        <img class="w-100" src="{{ section.settings.image_2 | img_url: '800x' }}" alt="{{section.settings.image_2.alt}}">
+                    </a>
+                    <a href="{{section.settings.image_3_link}}">
+                        <img class="w-100" src="{{ section.settings.image_3 | img_url: '800x' }}" alt="{{section.settings.image_3.alt}}">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+    {
+        "name": "Custom Image Grid",
+        "class": "image-section",
+        "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ],
+        "presets": [
+        {
+            "name": "Custom Image Grid",
+            "category": "Image"
+        }
+    ] 
+}
+{% endschema %}
