@@ -97,7 +97,7 @@
     "predictive_search_show_price": false,
     "favicon": "shopify:\/\/shop_images\/logo.png",
     "currency_code_enabled": true,
-    "cart_type": "notification",
+    "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
     "sections": {
@@ -122,13 +122,31 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "4c9a92d6-e669-42a2-a189-58d66da34d12": {
+            "type": "menu",
+            "settings": {
+              "menu": "main-menu"
+            }
+          },
+          "0a3b1c59-5da3-4819-947a-4081e179d95f": {
+            "type": "menu",
+            "settings": {
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "4c9a92d6-e669-42a2-a189-58d66da34d12",
+          "0a3b1c59-5da3-4819-947a-4081e179d95f"
+        ],
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify:\/\/shop_images\/logo.png",
           "logo_width": 150,
           "logo_position": "middle-left",
           "menu": "main-menu",
-          "menu_type_desktop": "dropdown",
+          "menu_type_desktop": "mega",
           "show_line_separator": true,
           "enable_sticky_header": true,
           "margin_bottom": 0,

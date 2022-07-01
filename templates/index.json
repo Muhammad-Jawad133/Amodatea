@@ -7,7 +7,7 @@
           "type": "main_banner_Section",
           "settings": {
             "desktop_url": "#",
-            "image": "shopify:\/\/shop_images\/slideshow_2.png",
+            "image": "shopify:\/\/shop_images\/feature2.png",
             "title": "20% OFF ON THE GO SACHETS",
             "text": "This week only! Use code ONTHEGO",
             "bt_text": "SHOP NOW",
@@ -90,9 +90,7 @@
         "text": "<p>A collection of our direct-source, authentic and organic Japanese green teas. Choose from our two pure matcha green teas from Uji, Japan, our hojicha roasted green tea powder and loose leaf tea, sencha and genmaicha (green tea with roasted rice).<\/p>",
         "collection": "custom-collection",
         "image_ratio": "portrait",
-        "show_secondary_image": true,
         "show_vendor": true,
-        "show_rating": false,
         "enable_quick_add": false
       }
     },
