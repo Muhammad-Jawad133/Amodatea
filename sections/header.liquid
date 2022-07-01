@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
-{%- if settings.cart_type == "drawer" -%}
+{%- if settings.cart_type == "drawer" -%} 
   {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
   {{ 'component-cart.css' | asset_url | stylesheet_tag }}
   {{ 'component-totals.css' | asset_url | stylesheet_tag }}
@@ -139,6 +139,7 @@
                 <nav class="menu-drawer__navigation">
                   <ul class="menu-drawer__menu has-submenu list-menu" role="list">
                     {%- for link in section.settings.menu.links -%}
+
                       <li>
                         {%- if link.links != blank -%}
                           <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -358,8 +359,36 @@
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
             {%- for link in section.settings.menu.links -%}
-              <li>
-                {%- if link.links != blank -%}
+            {% assign link_title = link.title | handleize %}
+            {%- assign mega_blocks = section.blocks | where: 'type', 'mega_menu' -%}
+            {% for block in mega_blocks %}
+            {% assign block_title = block.settings.title | handleize %}
+            {% if block_title == link_title %}
+            {% assign mega_menu = true %}
+            {% break %}
+            {% else %}
+            {% assign mega_menu = false %}
+            {% endif %}
+            {% endfor %}
+              <li class="{%- if mega_menu -%}mega-menu-container {% endif %}">
+                {%- if mega_menu -%}
+                {% for block in section.blocks %}
+                {% if block.settings.title == link.title %}
+                <a href="{{ link.url }}" class="{% if link.current %} item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                    {{ link.title | escape }}
+                  </a>
+                  <div class="mega-menu-content">
+                    <ul>
+                      {% for link in block.settings.menu.links %}
+                      <li>
+                        <a href="{{link.url}}">{{link.title}}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+                {% endfor %}
+                {%- elsif link.links != blank -%}
                   <header-menu>
                     <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
                       <summary class="header__menu-item list-menu__item link focus-inset">
@@ -823,7 +852,24 @@
       "label": "Add Mega Menu"
     }
   ]
- }
+ },
+ {
+  "type": "mega_menu",
+  "name": "Mega Menu",
+  "settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Menu Title",
+    "info": "Add same title of main menu in which you need to show this mega menu"
+  },
+  {
+    "type": "link_list",
+    "id": "menu",
+    "label": "Add Mega Menu"
+  }
+]
+}
 ]
 }
 {% endschema %}

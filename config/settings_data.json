@@ -123,22 +123,16 @@
       "header": {
         "type": "header",
         "blocks": {
-          "4c9a92d6-e669-42a2-a189-58d66da34d12": {
-            "type": "menu",
+          "ac65ddd5-2404-4a3a-b50e-4b9667d9e8c1": {
+            "type": "mega_menu",
             "settings": {
+              "title": "Monthly Box",
               "menu": "main-menu"
-            }
-          },
-          "0a3b1c59-5da3-4819-947a-4081e179d95f": {
-            "type": "menu",
-            "settings": {
-              "menu": "footer"
             }
           }
         },
         "block_order": [
-          "4c9a92d6-e669-42a2-a189-58d66da34d12",
-          "0a3b1c59-5da3-4819-947a-4081e179d95f"
+          "ac65ddd5-2404-4a3a-b50e-4b9667d9e8c1"
         ],
         "settings": {
           "color_scheme": "background-1",
