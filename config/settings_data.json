@@ -123,16 +123,16 @@
       "header": {
         "type": "header",
         "blocks": {
-          "ac65ddd5-2404-4a3a-b50e-4b9667d9e8c1": {
+          "468af87d-6d31-4895-9bc0-54deb51b997e": {
             "type": "mega_menu",
             "settings": {
-              "title": "Monthly Box",
-              "menu": "main-menu"
+              "title": "Shop",
+              "menu": "footer"
             }
           }
         },
         "block_order": [
-          "ac65ddd5-2404-4a3a-b50e-4b9667d9e8c1"
+          "468af87d-6d31-4895-9bc0-54deb51b997e"
         ],
         "settings": {
           "color_scheme": "background-1",

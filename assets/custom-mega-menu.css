@@ -1,0 +1,21 @@
+.mega-menu-content {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    max-width: max-content;
+    padding: 10px;
+    transition: all 0.25s;
+}
+.mega-menu-content {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+.mega-menu-container:hover .mega-menu-content {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
+/* .mega-menu-content + a.header__menu-item.header__menu-item.list-menu__item.link.link--text.focus-inset {
+    display: none;
+} */

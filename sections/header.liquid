@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+{{ 'custom-mega-menu.css' | asset_url | stylesheet_tag }}
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -372,9 +373,8 @@
             {% endfor %}
               <li class="{%- if mega_menu -%}mega-menu-container {% endif %}">
                 {%- if mega_menu -%}
-                {% for block in section.blocks %}
-                {% if block.settings.title == link.title %}
-                <a href="{{ link.url }}" class="{% if link.current %} item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                {% for block in mega_blocks %}
+                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset {% if link.current %} item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                     {{ link.title | escape }}
                   </a>
                   <div class="mega-menu-content">
@@ -386,7 +386,6 @@
                       {% endfor %}
                     </ul>
                   </div>
-                {% endif %}
                 {% endfor %}
                 {%- elsif link.links != blank -%}
                   <header-menu>
@@ -428,30 +427,6 @@
               </li>
             {%- endfor -%}
           </ul>
-          <div class="main-mega-menu">
-            {% for block in section.blocks %}
-            {%- case block.type -%}
-            {%- when 'menu' -%}
-            <style>
-              .main-mega-menu {
-                  display: none;
-              }
-            </style>
-            {%- if block.settings.menu != blank -%}
-            <ul class="list-unstyled mega-menu-{{ forloop.index }}">
-              {%- for link in block.settings.menu.links -%}
-                <li>
-                  <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
-                    {{ link.title }}
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ul>
-            {%- endif -%}
-
-            {% endcase %}
-            {% endfor %}
-          </div>
         </nav>
         
       {%- endif -%}
@@ -842,17 +817,6 @@
     }
   ],
   "blocks": [
-  {
-  "type": "menu",
-  "name": "menu",
-  "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Add Mega Menu"
-    }
-  ]
- },
  {
   "type": "mega_menu",
   "name": "Mega Menu",
