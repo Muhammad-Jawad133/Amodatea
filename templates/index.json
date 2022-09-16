@@ -91,7 +91,7 @@
         "collection": "custom-collection",
         "image_ratio": "portrait",
         "show_vendor": true,
-        "enable_quick_add": true,
+        "enable_quick_add": false,
         "show_secondary_image": true
       }
     },
