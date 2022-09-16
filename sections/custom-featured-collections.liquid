@@ -49,6 +49,9 @@
         %}
         </a>
     </div>
+    {% for variant in product.variants %}
+      {{ variant.title }}
+    {% endfor %}
     {% endfor %}
 {% endcapture %}
 <section class="custom-featured-collection">
