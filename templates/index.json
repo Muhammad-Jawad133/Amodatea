@@ -89,9 +89,10 @@
         "title": "JAPANESE GREEN TEAS",
         "text": "<p>A collection of our direct-source, authentic and organic Japanese green teas. Choose from our two pure matcha green teas from Uji, Japan, our hojicha roasted green tea powder and loose leaf tea, sencha and genmaicha (green tea with roasted rice).<\/p>",
         "collection": "custom-collection",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "show_vendor": true,
-        "enable_quick_add": false
+        "enable_quick_add": false,
+        "show_secondary_image": true
       }
     },
     "165661726096cd593c": {

@@ -40,16 +40,23 @@
   {% for product in collection.products limit: 7 %}
     <div class="col-30 col-md-20 custom-product-card">
         <a href="{{product.url}}">
-        {% render 'card-product',
+        {% render 'custom-card-product',
             card_product: product,
             show_vendor: section.settings.show_vendor,
             show_quick_add: section.settings.enable_quick_add,
+<<<<<<< HEAD
             show_secondary_image: section.settings.show_secondary_image,
             lazy_load: lazy_load
+=======
+            lazy_load: lazy_load,
+            show_secondary_image: section.settings.show_secondary_image
+>>>>>>> c270ce8da085d520714d1f32a2bbdbc033468817
         %}
         </a>
     </div>
     {% endfor %}
+    </div>
+
 {% endcapture %}
 <section class="custom-featured-collection">
     <div class="page-width home-popular-product">
@@ -127,7 +134,11 @@
           {
             "type": "checkbox",
             "id": "show_secondary_image",
+<<<<<<< HEAD
             "default": false,
+=======
+            "default": true,
+>>>>>>> c270ce8da085d520714d1f32a2bbdbc033468817
             "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
           }
     ],
