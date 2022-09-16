@@ -39,6 +39,7 @@
 {{collection_products}}
   {% for product in collection.products limit: 7 %}
     <div class="col-30 col-md-20 custom-product-card">
+        <a href="{{product.url}}">
         {% render 'card-product',
             card_product: product,
             show_vendor: section.settings.show_vendor,
@@ -46,6 +47,7 @@
             lazy_load: lazy_load,
             show_secondary_image: section.settings.show_secondary_image
         %}
+        </a>
     {% for variant in product.variants %}
       <vartitle>{{ variant.title }}</vartitle>
     {% endfor %}
