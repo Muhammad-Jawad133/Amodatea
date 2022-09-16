@@ -91,8 +91,8 @@
         "collection": "custom-collection",
         "image_ratio": "square",
         "show_vendor": true,
-        "enable_quick_add": true,
-        "show_secondary_image": true
+        "enable_quick_add": false,
+        "show_secondary_image": false
       }
     },
     "165661726096cd593c": {
