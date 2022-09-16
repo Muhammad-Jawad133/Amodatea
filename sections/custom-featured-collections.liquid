@@ -40,8 +40,8 @@
   {% for product in collection.products limit: 7 %}
     <div class="col-30 col-md-20 custom-product-card">
         <a href="{{product.url}}">
-        {% render 'card-product',
-            custom-card-product: product,
+        {% render 'custom-card-product',
+            card_product: product,
             show_vendor: section.settings.show_vendor,
             show_quick_add: section.settings.enable_quick_add,
             lazy_load: lazy_load,
